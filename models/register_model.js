@@ -18,6 +18,7 @@ module.exports = function toRegister(userData) {
                 result.status = "註冊失敗。";
                 result.err = "帳號重複";
                 reject(result);
+                return;
             } else {
                 // 將資料寫入資料庫
                 db.query('INSERT INTO users SET ?', userData.info, function (err, rows) {

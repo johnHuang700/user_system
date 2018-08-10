@@ -96,7 +96,7 @@ router.post('/register', function (req, res) {
     }, (err) => {
         res.render('register_result', {
             title: '註冊結果',
-            status: result.err,
+            status: '註冊失敗',
             result: JSON.stringify(err)
         });
     });
@@ -121,7 +121,7 @@ router.post('/edit', function (req, res) {
     }, (err) => {
         res.render('register_result', {
             title: '更新結果',
-            status: result.err,
+            status: '更新失敗',
             result: JSON.stringify(err)
         });
     });
@@ -141,7 +141,7 @@ router.post('/delete', function (req, res) {
     }, (err) => {
         res.render('register_result', {
             title: '刪除結果',
-            status: result.err,
+            status: '刪除失敗',
             result:''
         });
     });
