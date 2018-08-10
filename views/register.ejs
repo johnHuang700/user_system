@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+</head>
+
+<body>
+    <form class="form-signin" role="form" method="post" action="/users/register">
+        <h2><%= title %></h2>
+        <div class="form-group">
+            <label for="usr">帳號:</label>
+            <input id="usr" name="usr" type="text" class="form-control" placeholder="帳號" required />
+        </div>
+        <div class="form-group">
+            <label for="pwd">密碼:</label>
+            <input id="pwd" name="pwd" type="password" class="form-control" placeholder="密碼" required/>
+        </div>
+        <div class="form-group">
+            <label for="name">姓名:</label>
+            <input id="name" name="name" type="text" class="form-control" placeholder="姓名" required />
+        </div>
+        <div class="form-group">
+            <label for="sex">性別：</label>
+            <label class="radio-inline">
+                <input type="radio" name="sex" value="m" checked>男</label>
+            <label class="radio-inline">
+                <input type="radio" name="sex" value="f">女</label>
+        </div>
+        <div class="form-group">
+            <label for="birthday">生日：</label>
+            <input type="date" name="birthday" id="birthday" required>
+        </div>
+        <div class="form-group">
+            <label for="role">權限：</label>
+            <label class="radio-inline">
+                <input type="radio" name="role" value="<%= role %>" checked><%= role %></label>
+        </div>
+        <button type="submit" class="btn btn-default">註冊</button>
+    </form>
+</body>
+
+</html>
+<style>
+    [type="date"] {
+        background: #fff url(https://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/calendar_2.png) 97% 50% no-repeat;
+    }
+
+    [type="date"]::-webkit-inner-spin-button {
+        display: none;
+    }
+
+    [type="date"]::-webkit-calendar-picker-indicator {
+        opacity: 0;
+    }
+</style>

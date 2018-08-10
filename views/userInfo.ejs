@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        <%= title %>
+    </title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+</head>
+
+<body>
+    <h1>
+        <%= title %>
+    </h1>
+    <div class="row">
+        <div class="col-sm-4">帳號</div>
+        <div class="col-sm-8">
+            <%= user[0].usr %>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4">姓名</div>
+        <div class="col-sm-8">
+            <%= user[0].name %>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4">性別</div>
+        <div class="col-sm-8">
+            <%= user[0].sex %>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4">生日</div>
+        <div class="col-sm-8">
+            <%= moment(user[0].birth).format('YYYY/MM/DD'); %>
+        </div>
+    </div>
+    <a href="/" class="btn btn-primary">返回</a>
+</body>
+
+</html>
