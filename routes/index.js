@@ -11,7 +11,6 @@ router.get('/', function (req, res, next) {
         res.redirect('/login');
     } else if (req.session.role = 'admin') {
         getUserList().then(rows => {
-            console.log(rows);
             res.render('userManager', {
                 title: 'userManager',
                 userList: rows

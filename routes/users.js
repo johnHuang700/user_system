@@ -15,7 +15,6 @@ router.get('/', function (req, res, next) {
 
     var usr = req.query.usr;
     getUserInfo(usr).then(rows => {
-        console.log(rows);
         res.render('userInfo', {
             title: usr + '的資料',
             user: rows,
@@ -41,7 +40,6 @@ router.get('/edit', function (req, res, next) {
     }
     var usr = req.query.usr;
     getUserInfo(usr).then(rows => {
-        console.log(rows);
         res.render('edit', {
             title: usr,
             user: rows,
@@ -110,8 +108,8 @@ router.post('/edit', function (req, res) {
     }
     var userData = {
         name: req.body.name,
-        birth: req.body.birthday
-
+        birth: req.body.birthday,
+        usr: req.body.usr
     }
 
     toEdit(userData).then(result => {

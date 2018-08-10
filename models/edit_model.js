@@ -1,10 +1,10 @@
 const db = require('../database/mysql.js');
 
 module.exports = function toEdit(userData) {
-    console.log('toRegister');
+    console.log(userData);
     let result = {};
     return new Promise((resolve, reject) => {
-        db.query('UPDATE users SET ? where usr = ?', [userData,userData.usr], function (err, rows) {
+        db.query('UPDATE users SET name=?,birth=? where usr = ?', [userData.name,userData.birth,userData.usr], function (err, rows) {
             if (err) {
                 console.log(err);
                 result.status = "更新失敗";
@@ -12,6 +12,7 @@ module.exports = function toEdit(userData) {
                 reject(result);
                 return;
             }
+console.log(rows);
             result.status = "更新成功";
             result.registerMember = userData;
             resolve(result);
